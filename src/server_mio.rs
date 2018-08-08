@@ -122,15 +122,13 @@ impl TCPServer {
                                     break;
                                 }
                                 Ok(msgLen) => {
-                                    println!("receive num is {:?}", msgLen);
-
+                                    // println!("receive num is {:?}", msgLen);
+                                    println!("token {:?} receive msg {}", &token, msgLen);
                                     let mut msg = String::from_utf8(buf.to_vec()).unwrap();
-                                    println!(
-                                        "receive msg is {}",
-                                        msg
-                                    );
+                                    // println!("receive msg is {}", msg);
                                     // msg.push_str("server\n");
-                                    let sendNum = sockets.get_mut(&token).unwrap().write(msg.as_bytes());
+                                    let sendNum =
+                                        sockets.get_mut(&token).unwrap().write(msg.as_bytes());
                                 }
                                 Err(ref e) if e.kind() == io::ErrorKind::WouldBlock => {
                                     break;
