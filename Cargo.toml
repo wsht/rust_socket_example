@@ -1,0 +1,7 @@
+[package]
+name = "socket_example"
+version = "0.1.0"
+authors = ["wsht <952587282@qq.com>"]
+
+[dependencies]
+mio = "0.6"

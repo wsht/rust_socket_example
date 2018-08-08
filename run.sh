@@ -1,0 +1,1 @@
+docker run --rm -p 12306:12306 -v /Users/hantong/workplace/rust_project/tour_lib/socket_example/:/data/rust_socket --name my-running-app my-rust-app cargo run  --manifest-path /data/rust_socket/Cargo.toml server $1
