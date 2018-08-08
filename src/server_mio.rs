@@ -146,7 +146,7 @@ impl TCPServer {
 }
 
 pub fn test_server_mio() {
-    let mut server = TCPServer::new(12306);
+    let mut server = TCPServer::new(8001);
 
     server.run2();
 }
