@@ -12,7 +12,7 @@ use std::time::Duration;
 const SERVER: Token = Token(0);
 const CLIENT: Token = Token(1);
 
-const MAX_SOCKETS: usize = 5000;
+const MAX_SOCKETS: usize = 10000;
 const LiSTENER: Token = Token(10000);
 
 struct TCPServer {
@@ -91,7 +91,7 @@ impl TCPServer {
                                     if next_socket_index == MAX_SOCKETS {
                                         return ();
                                     }
-                                    println!("new client {}", address);
+                                    // println!("new client {}", address);
                                     let token = Token(next_socket_index);
                                     next_socket_index += 1;
 
@@ -123,7 +123,7 @@ impl TCPServer {
                                 }
                                 Ok(msgLen) => {
                                     // println!("receive num is {:?}", msgLen);
-                                    println!("token {:?} receive msg {}", &token, msgLen);
+                                    // println!("token {:?} receive msg {}", &token, msgLen);
                                     let mut msg = String::from_utf8(buf.to_vec()).unwrap();
                                     // println!("receive msg is {}", msg);
                                     // msg.push_str("server\n");
